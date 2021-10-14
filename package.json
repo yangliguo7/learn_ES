@@ -1,0 +1,19 @@
+{
+  "name": "babel",
+  "version": "1.0.0",
+  "description": "学习babel",
+  "main": "index.js",
+  "scripts": {
+    "babel": "babel src -d lib"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8"
+  },
+  "dependencies": {
+    "core-js": "^3.18.3"
+  }
+}
