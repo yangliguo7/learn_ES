@@ -4,14 +4,16 @@
   "description": "学习babel",
   "main": "index.js",
   "scripts": {
-    "babel": "babel src -d lib"
+    "babel": "babel src -d lib",
+    "prettier": "prettier -c --write \"src/**/*\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8"
+    "@babel/preset-env": "^7.15.8",
+    "prettier": "^2.5.1"
   },
   "dependencies": {
     "core-js": "^3.18.3"
