@@ -36,3 +36,9 @@ stage4 finished:已经准备就绪，该特性会出现在下个版本的ECMAScr
 
 babel只会转换语法而不会转换api，转换api是通过polyfill
 
+4、如何debugger
+
+``
+    node --inspect-brk 文件名称
+``
+
