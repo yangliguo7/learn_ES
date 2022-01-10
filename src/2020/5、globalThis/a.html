@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <h1>a</h1>
+  </body>
+  <script>
+    globalThis.aaaa = 'a';
+    globalThis.getGlobalThis = () => globalThis;
+
+    foo = 'a'; // or globalThis.foo = 'a', doesn't matter
+    // top是最顶层的窗口
+    top.getFooAsGlobalBinding = () => foo;
+    top.getFooAsGlobalThisProperty = () => globalThis.foo;
+  </script>
+</html>

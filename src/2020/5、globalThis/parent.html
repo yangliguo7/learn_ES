@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>$Title$</title>
+  </head>
+  <body>
+    <p>
+      This demo shows that <code>globalThis</code> is not “the global object”.
+      <a href="https://glitch.com/edit/#!/bead-pancake?path=index.html">View source</a>
+    </p>
+    <iframe src="./a.html"></iframe>
+  </body>
+  <script>
+    console.log(window === globalThis); // true
+    window.testDemo = {};
+    window.testDemo.a = 1;
+    globalThis.testDemo.b = 2;
+    console.log(window.testDemo); // { a:1,b:2  }
+    const iframe = document.querySelector('iframe');
+    iframe.onload = () => {
+      // frames为外层window frames[0] 为里层iframe里的window
+      console.log(frames === window); // true
+      console.log(frames === globalThis); // true
+      console.log(frames[0] === window); // false
+      console.log(frames[0] === globalThis); // false
+      console.log(frames.testDemo); // { a:1,b:2  }
+      console.log(frames[0].testDemo); // undefined
+      console.log(frames.aaaa === 'a'); // false 可以看出a.html中的globalThis并不会挂载到最外层的html中
+      console.log(frames[0].aaaa === 'a'); // true
+      const before = frames[0].getGlobalThis; // fn
+      frames.A = '在A定义的数据';
+      console.log(window.getFooAsGlobalBinding()); // a
+      console.log(window.getFooAsGlobalThisProperty()); // a
+      iframe.onload = () => {
+        // frames为外层window frames[0] 为里层iframe里的window
+        console.log(frames.A); // 在A定义的数据
+        console.log(frames === window); // true
+        console.log(frames === globalThis); // true
+        console.log(frames[0] === window); // false
+        console.log(frames[0] === globalThis); // false
+        console.log(frames.testDemo); // { a:1,b:2  }
+        console.log(frames[0].testDemo); // undefined
+        console.log(frames.aaaa === 'a'); // false
+        console.log(frames[0].aaaa === 'a'); // false // 可以看出在a.html中定义globalThis的数据在b的html也是获取不到的
+        const after = frames[0].getGlobalThis; // fn
+        console.log(before === after);
+        console.log(window.getFooAsGlobalBinding()); // a
+        console.log(window.getFooAsGlobalThisProperty()); // b // 这里的globalThis已经改变了
+      };
+      // 切换src地址
+      iframe.src = './b.html';
+    };
+  </script>
+</html>
