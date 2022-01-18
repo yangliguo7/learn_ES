@@ -42,3 +42,13 @@ babel只会转换语法而不会转换api，转换api是通过polyfill
     node --inspect-brk 文件名称
 ``
 
+5、可以使用`servez`来运行里面的html
+```
+npm i servez -g 使用servez开启一个服务
+```
+
+6、使用nvm来管理node版本
+```
+对于2021和2022的新特性在低版本的node是没办法运行的，建议使用nvm管理node版本，使用最新的node版本食用更加
+```
+
