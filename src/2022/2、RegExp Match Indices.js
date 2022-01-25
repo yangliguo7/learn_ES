@@ -38,14 +38,14 @@ console.log(result.indices[0]); // [ 1, 5 ]
 // 例如
 result = str.match(/\d(?<name>\D)\d/d);
 console.log(result.indices); // [ [ 1, 4 ], [ 2, 3 ], groups:  { name: [ 2, 3 ] } ]
-console.log(result.indices.groups) // { name: [ 2, 3 ] }
+console.log(result.indices.groups); // { name: [ 2, 3 ] }
 
 // 注意
 // 1、当你配上全局标识符g则无法正常工作
 result = str.match(/\d\D/dg); // [ '2c', '3d' ]
-console.log(result.indices) // undefined
+console.log(result.indices); // undefined
 // 2、同样使用于exec
-RegExp(/\d\D/d).exec(str)
+RegExp(/\d\D/d).exec(str);
 // [
 //     '2c',
 //     index: 1,
@@ -53,5 +53,4 @@ RegExp(/\d\D/d).exec(str)
 //     groups: undefined,
 //     indices: [ [ 1, 3 ], groups: undefined ]
 // ]
-RegExp(/\d\D/d).exec(str).indices // [ [ 1, 3 ], groups: undefined ]
-
+RegExp(/\d\D/d).exec(str).indices; // [ [ 1, 3 ], groups: undefined ]
