@@ -38,7 +38,18 @@ console.log('---分割线----');
 // 注意!!!!!!!!!!!!!!!!!!!!!!!!!
 // 1、top wait不会去阻碍相邻模块的导入
 // 例如：
-// 如果在fileA.mjs或者fileB.mjs也有一些耗时的操作,例如fileC.mjs
+// 如果在fileA.mjs或者fileB.mjs也有一些耗时的操作,例如fileC.mjs则会发生意想不到的情况
 // 请移步index2.mjs
 
+// 2、可以进行异步的导入
+// 例子:
+await import('./fileA.mjs');
+// 或者或作cdn时,如果cdn失败则可以换一个cdn
+try {
+  await import('./fileA.mjs');
+} catch (e) {
+  await import('./fileB.mjs');
+}
+
 // 注意
+// 这个特性暂时只存在了esm模块，在cjs中并不支持，所以我们这里使用mjs去告诉node这是一个esm。

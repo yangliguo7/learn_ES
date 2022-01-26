@@ -14,4 +14,4 @@ console.log('index2', 2); // 这里并不会执行
 // 例子：
 
 import { outputD } from './fileD.mjs';
-console.log(outputD)
+console.log(outputD);
