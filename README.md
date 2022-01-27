@@ -58,6 +58,16 @@
 - Logical Assignment Operators ([逻辑赋值运算符 `??= &&= ||=`](https://github.com/YangLG-7/learn_ES/blob/master/src/2021/4%E3%80%81Logical%20Assignment%20Operators.js))
 - Numeric separators ([数字分割符 `_`](https://github.com/YangLG-7/learn_ES/blob/master/src/2021/5%E3%80%81Numeric%20Separators.js))
 
+## 2022 年新特性
+- private Class ([class中表示私有属性/方法`#`](https://github.com/YangLG-7/learn_ES/blob/master/src/2022/1%E3%80%81private%20Class.js))
+- RegExp d ([正则获取匹配到的数据位置`d`](https://github.com/YangLG-7/learn_ES/blob/master/src/2022/2%E3%80%81RegExp%20Match%20Indices.js))
+- Top-level await ([在顶部可以直接使用await](https://github.com/YangLG-7/learn_ES/tree/master/src/2022/3%E3%80%81Top-level%20await))
+- Ergonomic brand checks for Private Fields ([**_PR Welcome_**](https://github.com/YangLG-7/learn_ES/blob/master/src/2022/4%E3%80%81Ergonomic%20brand%20checks%20for%20Private%20Fields.js))
+- .at ([对基本可索引类支持根据下标获取数据 `at`](https://github.com/YangLG-7/learn_ES/blob/master/src/2022/5%E3%80%81at.js))
+- Object.hasOwn ([检测对象是否有某个属性 `Object.hasOwn`](https://github.com/YangLG-7/learn_ES/blob/master/src/2022/6%E3%80%81hasOwn.js))
+- static block ([在class中提供一个区域进行静态值初始化 `static {}`](https://github.com/YangLG-7/learn_ES/tree/master/src/2022/7%E3%80%81static%20initialization%20blocks))
+- Error Cause ([提供一种配置异常的方法使得在抛出异常时可以指定失败原因 `{cause:e}`](https://github.com/YangLG-7/learn_ES/blob/master/src/2022/8%E3%80%81Error%20Cause.js))
+
 ### 扩展
 
 #### 1、TC39、ECMA、ECMAScript 三者是什么关系?
@@ -110,3 +120,4 @@ npm i servez -g 使用servez开启一个服务
 ```
 对于2021和2022的新特性在低版本的node是没办法运行的，建议使用nvm管理node版本，使用最新的node版本食用更加
 ```
+
